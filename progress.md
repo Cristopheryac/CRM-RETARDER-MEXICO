@@ -136,3 +136,46 @@ Route: /servicios → 6.68 kB + 109 kB First Load
 ```
 
 **Estado:** COMPLETADO — Pipeline Kanban funcional con 14 etapas.
+
+---
+
+## 2026-02-13 — Adelante: Dashboard, Navegación y Setup
+
+### SessionStart Hook
+- `.claude/hooks/session-start.sh` — Instala dependencias npm en sesiones web
+- `.claude/settings.json` — Registro del hook
+- `.eslintrc.json` — Configuración de ESLint (next/core-web-vitals)
+
+### Home Page mejorada
+- KPI cards: Ventas del mes, Servicios activos, Tasa de conversión, Inventario crítico
+- Navegación a 3 módulos: Dashboard, Ventas, Servicios
+- Tablas de actividad reciente: Órdenes y Cotizaciones
+
+### Dashboard Ejecutivo (`/dashboard`)
+- Gráfica de distribución del pipeline (BarChart)
+- Ventas por tipo de freno (PieChart donut)
+- Top clientes por órdenes (BarChart horizontal)
+- Órdenes por prioridad (PieChart donut)
+- Tabla completa de cotizaciones con status badges
+
+### Navegación Global
+- `NavHeader.tsx` — Barra de navegación persistente en layout raíz
+- Links: Inicio, Dashboard, Ventas, Servicios
+- Indicador visual de página activa
+
+### Mejoras técnicas
+- Supabase client resiliente (null cuando no hay credenciales, fallback a demo data)
+- Eliminado Link manual "CRM Retarder" de ventas (reemplazado por NavHeader)
+
+### Build
+
+```
+✓ Compiled successfully in 12.0s
+✓ Generating static pages (7/7)
+Route: /              → 161 B + 106 kB First Load
+Route: /dashboard     → 115 kB + 225 kB First Load
+Route: /servicios     → 7.25 kB + 109 kB First Load
+Route: /ventas/frenos → 48.2 kB + 157 kB First Load
+```
+
+**Estado:** COMPLETADO — Dashboard ejecutivo y navegación global funcionando.

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import type { TipoFreno, ItemCotizacion } from "@/lib/types";
 import { fetchTipoCambio } from "@/lib/inventario";
 import BrakeSelector from "@/components/BrakeSelector";
@@ -44,10 +43,8 @@ export default function VentasFrenosPage() {
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div>
-            <Link href="/" className="text-sm text-blue-600 hover:underline">
-              CRM Retarder
-            </Link>
             <h1 className="text-xl font-bold">Ventas de Frenos</h1>
+            <p className="text-sm text-gray-500">Cotizador de kits y piezas para retarders</p>
           </div>
           <ExchangeRateInput value={tipoCambio} onChange={setTipoCambio} />
         </div>

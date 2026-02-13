@@ -50,7 +50,6 @@ export default function ServiciosPage() {
               </p>
             </div>
 
-            {/* Quick stats */}
             <div className="flex gap-4">
               <QuickStat label="Total" value={totalOrdenes} color="text-gray-900" />
               <QuickStat label="En progreso" value={enProgreso} color="text-brand-600" />
@@ -58,7 +57,6 @@ export default function ServiciosPage() {
             </div>
           </div>
 
-          {/* Filters */}
           <div className="flex flex-wrap items-center gap-3">
             <input
               type="text"

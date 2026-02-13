@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavHeader from "@/components/NavHeader";
 
 export const metadata: Metadata = {
   title: "CRM Retarder México",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-gray-50 text-gray-900 min-h-screen">{children}</body>
+      <body className="bg-gray-50 text-gray-900 min-h-screen">
+        <NavHeader />
+        {children}
+      </body>
     </html>
   );
 }

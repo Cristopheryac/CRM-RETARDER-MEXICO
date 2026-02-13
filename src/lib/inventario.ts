@@ -37,6 +37,7 @@ const DEMO_KITS: Kit[] = [
 
 export async function fetchPiezas(tipoFreno?: TipoFreno): Promise<Pieza[]> {
   try {
+    if (!supabase) throw new Error("No Supabase client");
     let query = supabase
       .from("inventario")
       .select("*")
@@ -63,6 +64,7 @@ export async function fetchPiezas(tipoFreno?: TipoFreno): Promise<Pieza[]> {
 
 export async function fetchKits(tipoFreno?: TipoFreno): Promise<Kit[]> {
   try {
+    if (!supabase) throw new Error("No Supabase client");
     let query = supabase
       .from("kits")
       .select("*")
@@ -87,6 +89,7 @@ export async function fetchKits(tipoFreno?: TipoFreno): Promise<Kit[]> {
 
 export async function fetchTipoCambio(): Promise<number> {
   try {
+    if (!supabase) throw new Error("No Supabase client");
     const { data, error } = await supabase
       .from("configuracion")
       .select("valor")
