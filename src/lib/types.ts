@@ -17,11 +17,17 @@ export interface Pieza {
   stock_total: number;
   stock_apartado: number;
   stock_disponible: number;
+  stock_minimo: number;
   unidad: string;
   activa: boolean;
 }
 
 // ── Kits (configuraciones predefinidas) ──
+
+export interface KitPieza {
+  pieza_id: string;
+  cantidad: number;
+}
 
 export interface Kit {
   id: string;
@@ -29,6 +35,7 @@ export interface Kit {
   tipo_freno: TipoFreno;
   precio_usd: number;
   activo: boolean;
+  piezas: KitPieza[];
 }
 
 // ── Items de cotización (líneas del cotizador) ──
@@ -106,7 +113,7 @@ export interface InventoryMovement {
   pieza_id: string;
   pieza_descripcion: string;
   cantidad: number;
-  tipo: "apartado" | "descontado" | "liberado";
+  tipo: "entrada" | "apartado" | "descontado" | "liberado";
   fecha: string;
 }
 

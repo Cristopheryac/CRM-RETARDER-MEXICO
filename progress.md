@@ -136,3 +136,51 @@ Route: /servicios → 6.68 kB + 109 kB First Load
 ```
 
 **Estado:** COMPLETADO — Pipeline Kanban funcional con 14 etapas.
+
+---
+
+## 2026-02-13 — Fase P: Gestión de Inventario
+
+### Ampliaciones al modelo de datos
+
+| Archivo | Cambio |
+|---------|--------|
+| `src/lib/types.ts` | `Pieza.stock_minimo`, `KitPieza`, `Kit.piezas[]`, `InventoryMovement.tipo += "entrada"` |
+| `src/lib/inventario.ts` | 20 movimientos demo, `getAllPiezas()`, `getAllKits()`, `fetchMovimientos()`, `getPiezasCriticas()`, `getPiezasBajas()`, `validarStockKit()` |
+
+### Componentes creados
+
+| Componente | Descripción |
+|-----------|-------------|
+| `src/components/InventoryTable.tsx` | Tabla de piezas con buscador, filtro por categoría, ordenamiento por columnas, alertas 🔴/🟡/🟢 por stock |
+| `src/components/MovementHistory.tsx` | Historial de últimos 100 movimientos con filtros (tipo, fecha, orden) y exportación CSV |
+| `src/components/KitPanel.tsx` | Panel de kits con composición expandible, validación de stock por kit, indicador Stock OK / Sin stock |
+| `src/components/RestockAlerts.tsx` | Widget de piezas críticas/bajas, botón "Generar Orden de Compra" que exporta CSV con cantidades sugeridas |
+
+### Página principal
+
+| Archivo | Descripción |
+|---------|-------------|
+| `src/app/inventario/page.tsx` | 4 tabs (Piezas, Movimientos, Kits, Alertas), stats rápidos, badge contador en tab Alertas |
+
+### Funcionalidades implementadas
+
+1. **Tabla de Piezas** — Columnas: # Parte, Descripción, Stock, Apartado, Disponible, Mínimo, USD
+2. **Alertas visuales** — 🔴 stock total < mínimo, 🟡 disponible < mínimo, 🟢 OK
+3. **Buscador** — Por número de parte o descripción
+4. **Filtros por categoría** — Jacobs, Escape, Electromagnético, Universal
+5. **Ordenamiento** — Click en columnas (asc/desc)
+6. **Historial de Movimientos** — Filtros por tipo, fecha, orden + export CSV
+7. **Panel de Kits** — Composición expandible con tabla de piezas, validación de stock
+8. **Alertas de Reabastecimiento** — Piezas críticas/bajas con sugerencia de compra
+9. **Generar Orden de Compra** — Exporta CSV con folio, cantidades sugeridas y totales USD
+
+### Build
+
+```
+✓ Compiled successfully in 10.4s
+✓ Generating static pages (7/7)
+Route: /inventario → 6.86 kB + 159 kB First Load
+```
+
+**Estado:** COMPLETADO — Interfaz de inventario completa.
