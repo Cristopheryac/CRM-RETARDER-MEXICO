@@ -5,9 +5,9 @@
 - [x] Definir esquema de datos
 - [ ] Validar con cliente
 
-## Fase T: Tests ⏳
-- [ ] Verificar stack tecnológico
-- [ ] Probar conexión a Supabase
+## Fase T: Tests 🔴 BLOQUEADO
+- [x] Verificar stack tecnológico (Python 3.11, Node 22, supabase-py 2.28)
+- [ ] Probar conexión a Supabase — **ESPERANDO CREDENCIALES**
 
 ## Fase A: Arquitectura ⏳
 - [ ] Diseñar base de datos
