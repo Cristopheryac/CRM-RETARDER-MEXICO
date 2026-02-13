@@ -1,8 +1,8 @@
 # Plan de Tareas - CRM Retarder México
 
-## Fase E: Estrategia ⏳
-- [ ] Responder preguntas de descubrimiento
-- [ ] Definir esquema de datos
+## Fase E: Estrategia 🔄
+- [x] Responder preguntas de descubrimiento
+- [x] Definir esquema de datos
 - [ ] Validar con cliente
 
 ## Fase T: Tests ⏳
