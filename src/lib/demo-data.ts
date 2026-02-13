@@ -88,7 +88,7 @@ export function getPipelineData(): { etapa: string; cantidad: number }[] {
     counts[o.etapa] = (counts[o.etapa] || 0) + 1;
   });
 
-  return Array.from({ length: 11 }, (_, i) => ({
+  return Array.from({ length: 14 }, (_, i) => ({
     etapa: `E${i + 1}`,
     cantidad: counts[i + 1] || 0,
   }));

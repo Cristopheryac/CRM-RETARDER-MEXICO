@@ -92,8 +92,32 @@ export const ETAPA_NOMBRES: Record<number, string> = {
   8: "Servicio en Progreso",
   9: "Servicio Concluido",
   10: "Firma y Cierre",
-  11: "Facturación y Cierre",
+  11: "Facturación",
+  12: "Encuesta de Satisfacción",
+  13: "Seguimiento Post-Servicio",
+  14: "Cerrado",
 };
+
+export const TOTAL_ETAPAS = 14;
+
+export interface InventoryMovement {
+  id: string;
+  orden_servicio_id: string;
+  pieza_id: string;
+  pieza_descripcion: string;
+  cantidad: number;
+  tipo: "apartado" | "descontado" | "liberado";
+  fecha: string;
+}
+
+export interface ArchivoAdjunto {
+  id: string;
+  orden_servicio_id: string;
+  nombre: string;
+  tipo: "pdf_oc" | "foto_evidencia" | "pdf_cotizacion" | "otro";
+  url: string;
+  fecha: string;
+}
 
 export interface OrdenServicio {
   id: string;
